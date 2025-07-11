@@ -14,7 +14,7 @@ public class UsuarioSeleniumTest {
     @BeforeAll
     static void iniciarServidorYDriver() throws InterruptedException {
         new Thread(() -> App.main(null)).start();
-        Thread.sleep(4000); // esperar a que Spark inicie
+        Thread.sleep(3000); // esperar a que Spark inicie
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless=new");
@@ -26,6 +26,12 @@ public class UsuarioSeleniumTest {
         if (driver != null)
             driver.quit();
         spark.Spark.stop();
+
+        try {
+            Thread.sleep(1000); // espera que Spark se detenga
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Test

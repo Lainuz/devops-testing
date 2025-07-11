@@ -25,6 +25,12 @@ public class UsuarioRegresionTest {
     @AfterAll
     static void detenerServidor() {
         spark.Spark.stop();
+
+        try {
+            Thread.sleep(1000); // espera a que Spark libere el puerto y rutas
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @BeforeEach
