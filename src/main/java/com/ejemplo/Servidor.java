@@ -3,7 +3,14 @@ package com.ejemplo;
 import static spark.Spark.*;
 
 public class Servidor {
+
+    private static boolean iniciado = false;
+
     public static void iniciar() {
+        if (iniciado)
+            return; // evita reinicio
+        iniciado = true;
+
         port(8080);
 
         get("/", (req, res) -> """
