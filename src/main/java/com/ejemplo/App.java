@@ -56,5 +56,7 @@ public class App {
                         """.formatted(e.getMessage());
             }
         });
+        awaitInitialization();
     }
+
 }
