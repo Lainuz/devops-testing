@@ -5,6 +5,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.net.URI;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -15,7 +19,27 @@ public class UsuarioRegresionTest {
     @BeforeAll
     static void iniciarServidor() throws InterruptedException {
         new Thread(() -> App.main(null)).start();
-        Thread.sleep(2000); // espera a que Spark levante
+        esperarServidor(); // método para confirmar que Spark ya está atendiendo en localhost:8080
+    }
+
+    private static void esperarServidor() {
+        int intentos = 20;
+        while (intentos-- > 0) {
+            try {
+                URL url = URI.create("http://localhost:8080").toURL();
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                con.setConnectTimeout(500);
+                con.connect();
+                if (con.getResponseCode() == 200)
+                    return;
+            } catch (Exception e) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ignored) {
+                }
+            }
+        }
+        throw new RuntimeException("El servidor no respondió en localhost:8080");
     }
 
     @AfterAll
