@@ -14,7 +14,7 @@ public class UsuarioRegresionTest {
 
     @BeforeAll
     static void iniciarServidor() throws InterruptedException {
-        new Thread(() -> Servidor.iniciar()).start();
+        new Thread(() -> App.main(null)).start();
         Thread.sleep(2000); // espera a que Spark levante
     }
 

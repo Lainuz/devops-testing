@@ -2,15 +2,8 @@ package com.ejemplo;
 
 import static spark.Spark.*;
 
-public class Servidor {
-
-    private static boolean iniciado = false;
-
-    public static void iniciar() {
-        if (iniciado)
-            return; // evita reinicio
-        iniciado = true;
-
+public class App {
+    public static void main(String[] args) {
         port(8080);
 
         get("/", (req, res) -> """
@@ -31,6 +24,7 @@ public class Servidor {
 
             try {
                 double peso = Double.parseDouble(pesoStr);
+
                 Usuario usuario = new Usuario(nombre, peso);
 
                 return """
