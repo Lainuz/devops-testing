@@ -1,4 +1,4 @@
-name: CI - Pruebas Automatizadas y Reportes
+name: Pruebas Automatizadas
 
 on:
   push:
@@ -7,52 +7,25 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clonar repositorio
-      uses: actions/checkout@v3
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
 
-    - name: Instalar Java
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+      - name: Instalar Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'  # o 11 según tu proyecto
 
-    - name: Cache Maven
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-maven
+      - name: Cache de dependencias Maven
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven
 
-    - name: Instalar Google Chrome
-      run: |
-        sudo apt update
-        sudo apt install -y wget unzip xvfb libxi6
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install -y ./google-chrome-stable_current_amd64.deb
-
-
-    - name: Ejecutar pruebas JUnit y Selenium
-      run: mvn test
-
-    - name: Generar reporte HTML de pruebas (Surefire)
-      run: mvn surefire-report:report-only site
-      if: success()
-
-    - name: Publicar reporte HTML (JUnit)
-      uses: actions/upload-artifact@v4
-      with:
-        name: junit-html-report
-        path: target/site
-
-    - name: Ejecutar análisis SonarQube
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        mvn verify sonar:sonar \
-          -Dsonar.projectKey=peso-usuario \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=$SONAR_TOKEN
+      - name: Ejecutar pruebas con Maven
+        run: mvn test
