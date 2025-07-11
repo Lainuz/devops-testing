@@ -1,0 +1,142 @@
+
+1.0com.ejemplo:peso-usuarioJavaFrontend"1752229491758*java2.BÂ
+/
+*src/test/java/com/ejemplo/UsuarioTest.java2
+
+package4
+
+com.ejemplo5
+
+com.ejemplo.UsuarioTest7
+
+
+class8
+
+access9
+
+public10
+
+simple name11
+
+UsuarioTest12
+N
+Hcom.ejemplo.UsuarioTest#actualizarPeso_deberiaActualizarCorrectamente()V14
+
+method15
+
+	protected16
+3
+-actualizarPeso_deberiaActualizarCorrectamente17
+ 
+org.junit.jupiter.api.Test19
+
+unknown20
+
+annotated by21
+
+
+uses22
+
+com.ejemplo.Usuario24
+
+is type25
+
+calls26
+
+
+references27
+,
+&com.ejemplo.Usuario#actualizarPeso(D)V29
+&
+ org.junit.jupiter.api.Assertions31
+J
+Dorg.junit.jupiter.api.Assertions#assertEquals(DDLjava/lang/String;)V33
+$
+com.ejemplo.Usuario#getPeso()D35J
+
+1
+12Z
+
+3	
+354jõ
+
+18
+181920
+
+28
+282920
+
+32
+323320
+
+30
+303120
+
+23
+232420
+9
+64
+678 *
+1 (:3B
+	
+9
+10
+
+
+11
+12
+@
+13:
+131415 *
+1 (26:3B
+	
+9
+16
+
+
+11
+17
+
+34
+343520r©
+
+131821*
+1 (
+
+131822*
+1 (
+
+
+132325*
+1
+ 
+(
+
+132322*
+1
+	 
+(
+
+132326*
+1
+ 
+( 
+
+132327*
+1	 (
+
+
+132826*
+1 (
+
+133027*
+1	 (
+
+133226*
+1	 (
+
+132327*
+1 (
+
+133426*
+1 (%

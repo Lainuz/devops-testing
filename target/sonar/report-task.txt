@@ -1,0 +1,7 @@
+organization=lainuz
+projectKey=com.ejemplo:peso-usuario
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.65394
+dashboardUrl=https://sonarcloud.io/dashboard?id=com.ejemplo%3Apeso-usuario
+ceTaskId=AZf5Ba3w9iWgxoNE5JYY
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZf5Ba3w9iWgxoNE5JYY

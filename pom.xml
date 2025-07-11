@@ -33,13 +33,7 @@
             <artifactId>selenium-java</artifactId>
             <version>4.21.0</version>
         </dependency>
-
-        <!-- <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.4.1</version>
-            <scope>test</scope>
-        </dependency> -->
+     
     </dependencies>
 
     <build>
@@ -54,6 +48,14 @@
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.11.0.3922</version>
+                <configuration>
+                    <properties>
+                     <property>
+                        <name>sonar.projectKey</name>
+                        <value>https://sonarcloud.io</value>
+                    </property>
+                    </properties>
+                </configuration>
             </plugin>
         </plugins>        
     </build>
