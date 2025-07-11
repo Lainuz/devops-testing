@@ -13,7 +13,7 @@ public class UsuarioSeleniumTest {
 
     @BeforeAll
     static void iniciarServidorYDriver() throws InterruptedException {
-        new Thread(() -> App.main(null)).start();
+        new Thread(() -> Servidor.iniciar()).start();
         Thread.sleep(2000); // esperar a que Spark inicie
 
         ChromeOptions options = new ChromeOptions();

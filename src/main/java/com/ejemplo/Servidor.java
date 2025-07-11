@@ -2,8 +2,8 @@ package com.ejemplo;
 
 import static spark.Spark.*;
 
-public class App {
-    public static void main(String[] args) {
+public class Servidor {
+    public static void iniciar() {
         port(8080);
 
         get("/", (req, res) -> """
@@ -24,7 +24,6 @@ public class App {
 
             try {
                 double peso = Double.parseDouble(pesoStr);
-
                 Usuario usuario = new Usuario(nombre, peso);
 
                 return """
