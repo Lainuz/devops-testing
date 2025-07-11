@@ -50,7 +50,7 @@
                 <version>3.11.0.3922</version>
                 <configuration>
                     <properties>
-                     <property>
+                    <property>
                         <name>sonar.projectKey</name>
                         <value>https://sonarcloud.io</value>
                     </property>
