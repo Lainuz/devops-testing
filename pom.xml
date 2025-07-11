@@ -21,20 +21,25 @@
         </dependency>
 
     <!-- Spark -->
-    <dependency>
-        <groupId>com.sparkjava</groupId>
-        <artifactId>spark-core</artifactId>
-        <version>2.9.4</version>
-    </dependency>
+        <dependency>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
+            <version>2.9.4</version>
+        </dependency>
 
 <!-- Selenium -->
-    <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>4.21.0</version>
-    </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.21.0</version>
+        </dependency>
 
-
+        <!-- <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.4.1</version>
+            <scope>test</scope>
+        </dependency> -->
     </dependencies>
 
     <build>

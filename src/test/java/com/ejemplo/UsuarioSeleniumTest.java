@@ -14,10 +14,10 @@ public class UsuarioSeleniumTest {
     @BeforeAll
     static void iniciarServidorYDriver() throws InterruptedException {
         new Thread(() -> App.main(null)).start();
-        Thread.sleep(2000); // esperar a que Spark inicie
+        Thread.sleep(4000); // esperar a que Spark inicie
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new", "--no-sandbox");
+        options.addArguments("--headless=new");
         driver = new ChromeDriver(options);
     }
 

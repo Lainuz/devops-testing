@@ -3,8 +3,7 @@ package com.ejemplo;
 import static spark.Spark.*;
 
 public class App {
-
-    public static void iniciar() {
+    public static void main(String[] args) {
         port(8080);
 
         get("/", (req, res) -> """
@@ -25,6 +24,7 @@ public class App {
 
             try {
                 double peso = Double.parseDouble(pesoStr);
+
                 Usuario usuario = new Usuario(nombre, peso);
 
                 return """
@@ -56,11 +56,5 @@ public class App {
                         """.formatted(e.getMessage());
             }
         });
-
-        awaitInitialization(); // <-- Siempre al final
-    }
-
-    public static void main(String[] args) {
-        iniciar();
     }
 }

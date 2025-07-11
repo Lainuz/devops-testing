@@ -11,18 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Clonación del repositorio
     - name: Checkout
       uses: actions/checkout@v3
 
-    # Configuración de Java 17
     - name: Set Up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: "17"
         distribution: "temurin"
 
-    # Cache de dependencias Maven
     - name: Cache Maven
       uses: actions/cache@v3
       with:
@@ -30,24 +27,23 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-maven-
 
-    # Instalación de Google Chrome
     - name: Install Chrome
       uses: browser-actions/setup-chrome@v1
 
-    # Instalación de ChromeDriver compatible
     - name: Install ChromeDriver (v137.0.7151.119)
       uses: nanasess/setup-chromedriver@v2
       with:
         chromedriver-version: "137.0.7151.119"
 
-    # Compilación y pruebas con Maven
-    - name: Build & Test
-      run: mvn -B clean test
+    - name: Install xvfb
+      run: sudo apt-get update && sudo apt-get install -y xvfb
 
-    # Ejecución del análisis de calidad con SonarQube
+    - name: Build & Test
+      run: xvfb-run mvn -B clean verify sonar:sonar
+
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
-      continue-on-error: true  # Configuración tolerante a fallos de análisis
+      continue-on-error: true
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        SONAR_HOST_URL: "https://sonarcloud.io"
