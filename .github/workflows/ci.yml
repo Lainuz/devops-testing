@@ -41,9 +41,10 @@ jobs:
     - name: Build & Test
       run: xvfb-run mvn -B clean verify sonar:sonar
 
+     # Ejecución del análisis de calidad con SonarQube
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
-      continue-on-error: true
+      continue-on-error: true  # Configuración tolerante a fallos de análisis
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: "https://sonarcloud.io"
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
