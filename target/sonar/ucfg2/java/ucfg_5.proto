@@ -1,115 +1,0 @@
-
-__sonar_lambda_1$P
-F/home/lainuz/proyectos/peso-usuario/src/main/java/com/ejemplo/App.java :(	"11*4
-5 %(N"%
- %(N
-
-%11java.lang.String*•
-6 %(Mêç
- %(M
-%11java.lang.String"Ajava.lang.String#formatted([Ljava/lang/Object;)Ljava/lang/String;*"
-
-__unknown_file (
-""*4
-
-__unknown_file (
-
-%9java.lang.String*+
-
-__unknown_file (
-
-%10double2formatted([Ljava/lang/Object;)*
-5*ö
-7%; %(BÖÇ
-%; %(L
-%10double"com.ejemplo.Usuario#getPeso()D*<
-
-__unknown_file ( 
-
-usuariocom.ejemplo.Usuario2	getPeso()*
-6*•
-8 (<k
-i
- (<
-usuariocom.ejemplo.Usuario"__id*7
-
-__unknown_file (
-
-%7com.ejemplo.Usuario£†
-%& %(9
-%9java.lang.String"1com.ejemplo.Usuario#getNombre()Ljava/lang/String;*<
-
-__unknown_file ( 
-
-usuariocom.ejemplo.Usuario2getNombre()*
-7*Ø
-9 (:<:
-& (-
-%7com.ejemplo.Usuario"com.ejemplo.Usuario‹
-Ÿ
-" (;
-%8"0com.ejemplo.Usuario#<init>(Ljava/lang/String;D)V*7
-
-__unknown_file (
-
-%7com.ejemplo.Usuario*8
-
-__unknown_file (
-
-nombrejava.lang.String*"
-
-__unknown_file (
-""*
-8*—
-10 ($ª
-∏
- (9
-%6double"1java.lang.Double#parseDouble(Ljava/lang/String;)D*0
-
-__unknown_file ("
-java.lang.Double*9
-
-__unknown_file (
-
-pesoStrjava.lang.String*
-9*´
-11 („‡
- (5
-%4java.lang.String"?spark.Request#queryParams(Ljava/lang/String;)Ljava/lang/String;*2
-
-__unknown_file (
-
-reqspark.Request*&
-
-__unknown_file (
-
-nombre2queryParams(Ljava/lang/String;)d
-b
- (6
-nombrejava.lang.String"__id*4
-
-__unknown_file (
-
-%4java.lang.String·ﬁ
- (4
-%5java.lang.String"?spark.Request#queryParams(Ljava/lang/String;)Ljava/lang/String;*2
-
-__unknown_file (
-
-reqspark.Request*$
-
-__unknown_file (
-peso2queryParams(Ljava/lang/String;)e
-c
- (5
-pesoStrjava.lang.String"__id*4
-
-__unknown_file (
-
-%5java.lang.String*
-10: 
- (
-reqspark.Request:!
- (
-resspark.ResponseB
-spark.Route

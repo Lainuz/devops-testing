@@ -42,21 +42,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M9</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.11.0.3922</version>
-                <configuration>
-                    <properties>
-                    <property>
-                        <name>sonar.projectKey</name>
-                        <value>https://sonarcloud.io</value>
-                    </property>
-                    </properties>
-                </configuration>
-            </plugin>
+            </plugin>           
         </plugins>        
     </build>
 
